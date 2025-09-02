@@ -1,0 +1,42 @@
+{
+      "name": "PHP 8.2 + Apache + IonCube + Composer",
+        "build": {
+            "dockerfile": "Dockerfile"
+              },
+
+                "customizations": {
+                    "vscode": {
+                          "extensions": [
+                                  "bmewburn.vscode-intelephense-client",
+                                          "ms-azuretools.vscode-docker",
+                                                  "esbenp.prettier-vscode",
+                                                          "formulahendry.auto-rename-tag",
+                                                                  "bradlc.vscode-tailwindcss",
+                                                                          "github.copilot"
+                                                                                ],
+                                                                                      "settings": {
+                                                                                              "php.validate.executablePath": "/usr/local/bin/php",
+                                                                                                      "files.autoSave": "afterDelay",
+                                                                                                              "editor.formatOnSave": true
+                                                                                                                    }
+                                                                                                                        }
+                                                                                                                          },
+
+                                                                                                                            "forwardPorts": [80, 8000, 3306],
+                                                                                                                              "portsAttributes": {
+                                                                                                                                  "80": {
+                                                                                                                                        "label": "Apache HTTP Server",
+                                                                                                                                              "requireLocalPort": true
+                                                                                                                                                  }
+                                                                                                                                                    },
+
+                                                                                                                                                      "postCreateCommand": "sudo chmod -R 777 /workspace && composer install --no-interaction --prefer-dist",
+
+                                                                                                                                                        "remoteUser": "root",
+                                                                                                                                                          "features": {
+                                                                                                                                                              "ghcr.io/devcontainers/features/github-cli:1": {}
+                                                                                                                                                                },
+
+                                                                                                                                                                  "runArgs": ["--init"]
+                                                                                                                                                                  }
+}
