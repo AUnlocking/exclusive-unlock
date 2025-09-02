@@ -1,9 +1,0 @@
-{
-    "name": "exclusiveunlock",
-        "build": {
-            "dockerfile": "Dockerfile"
-              },
-                // ... otras configuraciones ...
-                  "postCreateCommand": "composer install --no-interaction --prefer-dist"
-                  }
-}
